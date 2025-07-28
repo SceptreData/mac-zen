@@ -1,16 +1,192 @@
 ---
-
+import '@fontsource/protest-revolution'
+import '@fontsource/sorts-mill-goudy'
+import { Content as Zen } from '../zen.md'
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<html lang='en'>
+  <head>
+    <meta charset='utf-8' />
+    <link rel='icon' type='image/svg+xml' href='/favicon.svg' />
+    <meta name='viewport' content='width=device-width' />
+    <meta name='generator' content={Astro.generator} />
+    <title>DFB's guide to Macintosh Zen</title>
+  </head>
+  <body>
+    <h1>DFB's Guide to <span>Macintosh Zen</span></h1>
+    <Zen />
+  </body>
 </html>
+<style>
+  /* Base styles */
+  body {
+    background: #f4ead5;
+    color: #2d2d2d;
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 2rem;
+    font-family: 'Sorts Mill Goudy', serif;
+    line-height: 1.6;
+  }
+
+  /* Typography */
+  h1 {
+    font-family: 'Protest Revolution', sans-serif;
+    text-align: center;
+    font-size: 1.75rem;
+    margin-bottom: 2rem;
+    color: #3d3d3d;
+  }
+
+  h1 span {
+    color: #c53030;
+    display: block;
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  h2,
+  h3 {
+    color: #3d3d3d;
+    border-bottom: 1px solid #d4c5a9;
+    padding-bottom: 0.25rem;
+  }
+
+  h2 {
+    margin: 2rem 0 1rem 0;
+  }
+  h3 {
+    margin: 1.5rem 0 0.75rem 0;
+  }
+
+  strong {
+    color: #c53030;
+  }
+
+  /* Lists */
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+  }
+
+  li {
+    margin: 0.5rem 0;
+    padding-left: 1rem;
+    position: relative;
+  }
+
+  li::before {
+    content: '•';
+    color: #c53030;
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+  ul ul li::before {
+    content: '◦';
+    color: #a02626;
+  }
+
+  /* Links - GLOBAL so they work in markdown content */
+  :global(a) {
+    color: #a02626;
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+  }
+
+  :global(a:hover),
+  :global(a:visited),
+  :global(a:active),
+  :global(a:focus) {
+    color: #a02626;
+  }
+
+  :global(a::after) {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: -2px;
+    left: 0;
+    background: linear-gradient(90deg, #c53030, #a02626);
+    transition: width 0.3s ease;
+  }
+
+  :global(a:hover::after) {
+    width: 100%;
+  }
+
+  /* Dropdown toggles - GLOBAL so they work on dynamically created elements */
+  :global(.dropdown-toggle) {
+    color: #c53030;
+    cursor: pointer;
+    margin-left: 1rem;
+    transition: transform 0.3s ease;
+    display: inline-block;
+  }
+
+  :global(.dropdown-toggle:hover) {
+    transform: scale(1.25);
+  }
+  :global(.dropdown-toggle.open) {
+    transform: scale(1.25);
+  }
+
+  /* Toggle indicator in intro text */
+  :global(.toggle-indicator) {
+    color: #c53030;
+    font-weight: bold;
+  }
+
+  /* Dropdown content - HIDDEN BY DEFAULT */
+  :global(div.extra-info) {
+    background: #f9f5ef;
+    border-left: 3px solid #c53030;
+    border-radius: 0 4px 4px 0;
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+    color: #5d5d5d;
+    padding: 0.75rem;
+    display: none !important;
+  }
+
+  :global(div.extra-info.open) {
+    display: block !important;
+  }
+</style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    console.log('DOM loaded, searching for .extra-info elements...')
+    const extraInfos = document.querySelectorAll('.extra-info')
+    console.log('Found', extraInfos.length, 'extra-info elements')
+
+    extraInfos.forEach((div, index) => {
+      console.log(`Processing element ${index}:`, div)
+      const prevElement = div.previousElementSibling
+      if (!prevElement) {
+        console.log('No previous element found')
+        return
+      }
+      console.log('Previous element:', prevElement)
+
+      const toggle = document.createElement('span')
+      toggle.className = 'dropdown-toggle'
+      toggle.textContent = '⊙'
+      prevElement.appendChild(toggle)
+      console.log('Added toggle to:', prevElement)
+
+      toggle.addEventListener('click', () => {
+        console.log('Toggle clicked!')
+        div.classList.toggle('open')
+        toggle.classList.toggle('open')
+        console.log('Div classes:', div.className)
+        console.log('Toggle classes:', toggle.className)
+      })
+    })
+  })
+</script>
