@@ -1,4 +1,4 @@
-This guide is for the traveler between worlds<br/> A windows user learning the rythms of macOS. <br/> Think of it as a cheat sheet++. <br/> Use it to skim the surface, <br/>or descend into the weeds.
+This guide is for the traveler between worlds<br/> A stranger learning the rythms of macOS. <br/> Think of it as a cheat sheet++. <br/> Use it to skim the surface, <br/>or descend into the weeds.
 
 Resistance is natural- but, perhaps, <br/>you will let go, <br/>and find the flow.
 
@@ -107,10 +107,11 @@ What is deeper, waits quietly inside the dropdowns.<br/>
 ## Must-Have Apps & Tools
 
 - [**Raycast**](https://www.raycast.com) – App launcher & productivity Swiss army knife
-  <div class="extra-info">Set up Quicklinks for Gmail, perform calculations, control music, and more.</div>
+  <div class="extra-info">Set up Quicklinks for Gmail, perform calculations, control music, and more. Along with a window manager (Magnet), this is genuinely the only MUST-HAVE app. Everything else is nice-to-have.</div>
 - [**Magnet**](https://magnet.crowdcafe.com) – Window snapping (paid)
-- [**Rectangle**](https://rectangleapp.com) – Magnet alternative (free)
-- [**ICE**](https://github.com/grimzy/ice) – Clean up your menu bar icons
+  <div class="extra-info">Essential for productivity. Drag windows to screen edges for instant tiling. This + Raycast are the only two apps you truly need to transform your Mac workflow.</div>
+- [**ICE**](https://icemenubar.app/) – Clean up your menu bar icons
+  <div class="extra-info">The menu bar is the strip at the top of your screen (where the time/battery shows). Unlike Windows, every Mac app dumps its little icons to the bar on the top - WiFi, Bluetooth, apps running in background, etc. ICE lets you hide the mess and keep only what you need visible. Essential for a clean, distraction-free workspace.</div>
 - [**Google Drive**](https://www.google.com/drive/download/) – Sync files into Finder
 - [**Chrome**](https://www.google.com/chrome/) – Ideal for Google users
 - [**VLC**](https://www.videolan.org/vlc/index.html) – Universal media player

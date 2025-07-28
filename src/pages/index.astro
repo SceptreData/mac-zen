@@ -32,10 +32,17 @@ import { Content as Zen } from '../zen.md'
   /* Typography */
   h1 {
     font-family: 'Protest Revolution', sans-serif;
-    text-align: center;
+    text-align: left;
     font-size: 1.75rem;
     margin-bottom: 2rem;
     color: #3d3d3d;
+    line-height: 1.2;
+  }
+
+  @media (min-width: 768px) {
+    h1 {
+      text-align: center;
+    }
   }
 
   h1 span {
@@ -63,20 +70,20 @@ import { Content as Zen } from '../zen.md'
     color: #c53030;
   }
 
-  /* Lists */
-  ul {
+  /* Lists - GLOBAL so they work in markdown content */
+  :global(ul) {
     list-style: none;
     padding: 0;
     margin: 1rem 0;
   }
 
-  li {
+  :global(li) {
     margin: 0.5rem 0;
     padding-left: 1rem;
     position: relative;
   }
 
-  li::before {
+  :global(li::before) {
     content: '•';
     color: #c53030;
     font-weight: bold;
@@ -85,7 +92,7 @@ import { Content as Zen } from '../zen.md'
     top: 0;
   }
 
-  ul ul li::before {
+  :global(ul ul li::before) {
     content: '◦';
     color: #a02626;
   }
@@ -167,18 +174,22 @@ import { Content as Zen } from '../zen.md'
 
     extraInfos.forEach((div, index) => {
       console.log(`Processing element ${index}:`, div)
-      const prevElement = div.previousElementSibling
-      if (!prevElement) {
-        console.log('No previous element found')
-        return
-      }
-      console.log('Previous element:', prevElement)
 
       const toggle = document.createElement('span')
       toggle.className = 'dropdown-toggle'
       toggle.textContent = '⊙'
-      prevElement.appendChild(toggle)
-      console.log('Added toggle to:', prevElement)
+
+      // Check if the previous sibling is a <p> tag
+      const prevElement = div.previousElementSibling
+      if (prevElement && prevElement.tagName === 'P') {
+        // If there's a <p> tag, append the toggle to it
+        prevElement.appendChild(toggle)
+        console.log('Added toggle to <p> element:', prevElement)
+      } else {
+        // Otherwise, insert before the extra-info div
+        div.insertAdjacentElement('beforebegin', toggle)
+        console.log('Added toggle before extra-info div')
+      }
 
       toggle.addEventListener('click', () => {
         console.log('Toggle clicked!')
