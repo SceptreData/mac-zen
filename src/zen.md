@@ -98,8 +98,8 @@ What is deeper, waits quietly inside the dropdowns.<br/>
   <div class="extra-info">Click and hold to access left/right split-screen tiling.</div>
 - **Red button ≠ Quit**
   <div class="extra-info">Use Cmd + Q to truly quit an app.</div>
-- **Use Magnet or Rectangle for window snapping**
-  <div class="extra-info">Magnet is paid, Rectangle is free. Both are excellent.</div>
+- **Use Magnet for window snapping**
+  <div class="extra-info">Essential paid app for window management. Drag windows to screen edges for instant tiling. Excellent keyboard shortcuts. This + Raycast are the only two apps you truly need to transform your Mac workflow.</div>
 - **Mission Control (F3 or swipe up)** – View all open windows
 - **Spaces (Desktops)** – Add/manage desktops from Mission Control
 - **AltTab app** – Windows-style Alt+Tab window switching
