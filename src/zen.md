@@ -129,10 +129,6 @@ simplicity hides within complexity,<br/>
 and what feels strange becomes familiar<br/>
 repetition, repetition, repetition.
 
-When troubles arise,<br/>
-seek first the Settings,<br/>
-for most storms can be calmed<br/>
-with a single, well-placed mark.
 
 **Tip:** Explore System Settings. Search is your friend. Most annoyances have a checkbox.
 
